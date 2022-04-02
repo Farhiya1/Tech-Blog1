@@ -46,3 +46,11 @@ const hbs = exphbs.create({
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
+// Importing routes.
+app.use(require("./controllers/"));
+
+// Starting server.
+app.listen(PORT, () => {
+  console.log(`App listening on port ${PORT}!`);
+  sequelize.sync({ force: false });
+});
