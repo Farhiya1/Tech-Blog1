@@ -29,3 +29,20 @@ const sess = {
 // As soon as server is contacted, session is started.  Session generates a cookie.
 app.use(session(sess));
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+// Looking for endpoints in public folder to connect to server.
+app.use(express.static(path.join(__dirname, "public")));
+
+// Added helper to format date to use to track users posts
+const hbs = exphbs.create({
+  helpers: {
+    format_date: (date) => {
+      return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+    },
+  },
+});
+
+app.engine("handlebars", hbs.engine);
+app.set("view engine", "handlebars");
+
