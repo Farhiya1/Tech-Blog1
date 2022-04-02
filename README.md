@@ -74,9 +74,9 @@ To access Github Repository
 
 1. https://github.com/Farhiya1/Tech-Blog1.git
 
-To access Application via Heroku
+# To access deployed Application to Heroku
 
-2. https://dashboard.heroku.com/apps/immense-mesa-63124
+2. https://guarded-oasis-18254.herokuapp.com/
 
 # Screenshot of application)
 
